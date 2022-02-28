@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-5vyv*%(b$-vs7bk9)lc747g=jvamlc!9cc^9z!$u(!jm3xp3&@'
+SECRET_KEY = 'django-insecure-thn%h6zg11a)w!ixg=6=@9v8wl&)gk8+oqg9!@^p+oboqvnq%9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,8 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'account.AccountConfig'
-    'main.MainConfig'
+    'main.apps.MainConfig'
 ]
 
 MIDDLEWARE = [
@@ -56,7 +55,7 @@ ROOT_URLCONF = 'iCalc.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['./iCalc/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

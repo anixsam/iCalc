@@ -1,0 +1,11 @@
+<h1>Hello {{request.user}}</h1>
+<table>
+{% for income in home %}
+
+<tr>
+    <td>{{income.title}}</td>
+    <td>{{income.amount}}</td>
+</tr>
+
+{% endfor %}
+</table>
