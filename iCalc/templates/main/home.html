@@ -1,11 +1,44 @@
-<h1>Hello {{request.user}}</h1>
+{% if request.user.is_authenticated %}
+<h1>Hello {{request.user.first_name}} {{request.user.last_name}}</h1>
+<h3>Expense</h3>
 <table>
+    <tr>
+        <th>Title</th>
+        <th>Amount</th>
+    </tr>
 {% for income in home %}
-
+{% if income.type_choice == 'ex' %}
 <tr>
     <td>{{income.title}}</td>
     <td>{{income.amount}}</td>
 </tr>
-
+{% endif %}
 {% endfor %}
+
+</table>
+<h3>Income</h3>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Amount</th>
+    </tr>
+{% for income in home %}
+{% if income.type_choice == 'in' %}
+<tr>
+    <td>{{income.title}}</td>
+    <td>{{income.amount}}</td>
+</tr>
+</table>
+{% endif %}
+{% endfor %}
+
+
+<br><br>
+<a href="{% url 'addincome' %}">Add Income</a><br>
+        <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+        <a href="{% url 'login' %}">Login</a>
+
+
+{% endif %}
 </table>
