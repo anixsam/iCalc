@@ -53,7 +53,7 @@ class HomePage(LoginRequiredMixin,ListView):
 
 class AddIncome(CreateView):
     model = Income
-    fields = {'title','amount','date'}
+    fields = {'title','amount','date','type_choice'}
     success_url = reverse_lazy('home')
     template_name = 'main/add_income.html'
 
