@@ -1,0 +1,16 @@
+{% if request.user.is_authenticated %}
+<h1>Hello {{request.user.first_name}} {{request.user.last_name}}</h1>
+<h3>Log</h3>
+
+{{log.amount__sum}}
+
+
+<br><br>
+<a href="{% url 'addincome' %}">Add Income</a><br>
+        <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+        <a href="{% url 'login' %}">Login</a>
+
+
+{% endif %}
+</table>

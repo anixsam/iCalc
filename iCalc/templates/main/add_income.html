@@ -1,9 +1,40 @@
-<h1>Add Income</h1>
+{% extends 'style/style.html' %}
 
-<form method="post" action="">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Submit">
-</form>
+{% block content %}
+<div class="navbar">
+    <h4>Hello {{request.user.first_name | title}} {{request.user.last_name | title}}</h4>
+    <div class="logout"><a href="{% url 'logout' %}">Logout</a></div>
+</div>
 
-<a href="{% url 'home' %}">Go Back</a><br>
+<div class="container">
+    <div class="shadow">
+    <div class="header">
+        <h1>Add Income or Expense</h1>
+    </div>
+    <div class="login-form">
+        <form method="post">
+            {% csrf_token %}
+            <div><label>{{form.title.label}}</label>
+            {{form.title}}</div>
+            <br>
+            <div><label>{{form.amount.label}}</label>
+            {{form.amount}}</div>
+            <br>
+            <div><label>{{form.date.label}}</label>
+            {{form.date}}</div>
+            <br>
+            <div><label>{{form.type_choice.label}}</label>
+            {{form.type_choice}}</div>
+            <br>
+            <span class="btn"><input type="submit" value="Add" class="button"></span>
+            <span class="btn"><a href="{% url 'home' %}"><input type="button" value="Cancel" class="button"></a></span>
+            
+        </form>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

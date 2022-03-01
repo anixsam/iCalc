@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>iCalc</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <style>
+        h1,h2,h3,h4,h5,h6
+        {
+            font-weight: bold;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+            font-weight: bolder;
+        }   
+        body
+        {
+            font-family: 'Work Sans', sans-serif;
+            background-color: rgba(182, 234, 255, 0.623);
+        }        
+        .login-form
+        {
+            justify-items: center;
+            background-color: rgb(255, 255, 255);
+            margin: auto;
+            max-width: 500px;
+            padding: 20px;
+            color: black;
+            font-weight: bold;
+            border-radius: 0 0 15px 15px;
+        }
+        .shadow
+        {
+            -webkit-box-shadow: 6px 6px 8px -2px rgba(0,0,0,0.41);
+            -moz-box-shadow: 6px 6px 8px -2px rgba(0,0,0,0.41);
+            box-shadow: 6px 6px 8px -2px rgba(0,0,0,0.41);
+            border-radius: 15px;
+        }
+        .title-text
+        {
+            color: black;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .header
+        {
+            display: flex;
+            justify-content: space-between;
+            color: rgb(0, 0, 0);
+            padding: 10px;
+            border-radius: 15px 15px 0 0;
+            background: linear-gradient(104deg, rgba(255,255,255,1) 0%, rgb(157, 199, 233) 44%, rgb(116, 169, 231) 100%);
+        }
+        .container
+        {
+            justify-items: space-between;
+            display: block;
+            margin-top: 5% !important;
+            margin: auto;
+            max-width: 500px;
+            padding: 20px;
+            height: 500px;
+            font-weight: bold; 
+            
+
+        }
+        .container-fullwidth
+        {
+            margin:10px;
+        }
+        input[type="text"] ,
+        input[type="password"],
+        input[type="email"],
+        input[type="number"]
+        {
+            width: 100%;
+            background-color: rgba(173, 173, 173, 0.212);
+            border-color: rgba(128, 128, 128, 0.075);
+            color: black !important;
+            font-weight: bold !important;
+            font-size: 20px;
+            border-radius: 5px;
+        }
+        input[type="text"]:focus
+        {
+            color: black !important;
+            font-weight: bold !important;
+        }
+        input[type="submit"]
+        {
+            color: black !important;
+            font-weight: bold !important;
+            width: 150px;
+            text-align: center;
+            text-justify: start !important;
+            font-size: 20px;
+            background-color: rgba(173, 173, 173, 0.212);
+            border-color: rgba(128, 128, 128, 0.075) ;
+        }
+        .button{
+            color: black !important;
+            font-weight: bold !important;
+            width: 150px;
+            text-align: center;
+            text-justify: start !important;
+            font-size: 20px;
+            background-color: rgba(173, 173, 173, 0.212);
+            border-color: rgba(128, 128, 128, 0.075) ;
+        }
+        .button:hover{
+            color: black !important;
+            background-color: rgba(29, 130, 224, 0.212);
+
+        }
+        .btn
+        {
+            width: auto;
+        }
+        .navbar
+        {
+            width: 100%;
+            background-color: rgb(164, 213, 245);
+        }
+        .logout
+        {
+            background-color: rgb(138, 201, 243);
+            padding: 5px;
+            border-radius: 5px;
+            -webkit-box-shadow: 2px 2px 5px -2px rgba(0,0,0,0.41);
+            -moz-box-shadow: 2px 2px 5px -2px rgba(0,0,0,0.41);
+            box-shadow: 2px 2px 5px -2px rgba(0,0,0,0.41);  
+        }
+        .floating-button
+        {
+            background-color: rgb(27, 137, 240);
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            border-radius: 100%;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            color: white;
+        }
+
+        select
+        {
+            font-weight: bold;
+            color: black;
+        }
+        
+        .table td,tr,th
+        {
+            border: none;
+        }
+
+        .home-cont
+        {
+            background-color: rgba(255, 255, 255, 0.411);
+        }
+        </style>
+    </head>
+    <body>
+        <div >
+            {% block content %}
+
+            {% endblock content %}
+        </div>
+    </body>
+</html>

@@ -1,7 +1,29 @@
-<h1>Login</h1>
+{% extends 'style/style.html' %}
 
-<form method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="login">
-</form>
+{% block content %}
+<div class="container-fullwidth">
+    <a style="text-decoration: none;" href="{% url 'home' %}"><h3 class="title-text">iCalc</h3></a>
+</div>
+
+<div class="container">
+    <div class="shadow">
+    <div class="header">
+        <h1>Login</h1>
+    </div>
+    <div class="login-form">
+        <form method="post">
+            {% csrf_token %}
+            <div><label>{{form.username.label}}</label>
+            {{form.username}}</div>
+            <br>
+            <div><label>{{form.password.label}}</label>
+            {{form.password}}</div>
+            <br>
+            <div class="btn"><input type="submit" value="Login"></div>
+        </form>
+        <br>
+        <p>Don't have an account? <a href="{% url 'register' %}">Register Here</a></p>
+    </div>
+</div>
+</div>
+{% endblock %}

@@ -1,9 +1,38 @@
-<h1>Register</h1>
-<form method="post">
-    {% csrf_token %}
+{% extends 'style/style.html' %}
 
-    {{form.as_p}}
+{% block content %}
+<div class="container-fullwidth">
+    <h3 class="title-text">iCalc</h3>
+</div>
 
-    <input type="submit" value="Register">
-
-</form>
+<div class="container">
+    <div class="shadow">
+    <div class="header">
+        <h1>Register</h1>
+    </div>
+    <div class="login-form">
+        <form method="post">
+            {% csrf_token %}
+            <div><label>{{form.first_name.label}}</label>
+                {{form.first_name}}</div><br>
+            <div><label>{{form.last_name.label}}</label>
+                {{form.last_name}}</div><br>
+            <div><label>{{form.email.label}}</label>
+                {{form.email}}</div><br>
+            <div><label>{{form.username.label}}</label>
+            {{form.username}}</div>
+            <br>
+            <div><label>{{form.password1.label}}</label>
+            {{form.password1}}</div>
+            <br>
+            <div><label>{{form.password2.label}}</label>
+                {{form.password2}}</div>
+                <br>
+            <div class="btn"><input type="submit" value="Register"></div>
+        </form>
+        <br>
+        <p>Have an account? <a href="{% url 'login' %}">Login</a></p>
+    </div>
+    </div>
+</div>
+{% endblock %}
