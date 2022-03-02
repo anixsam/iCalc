@@ -2,6 +2,7 @@
 from django.utils.timezone import now
 from django.db import models
 from django.contrib.auth.models import User
+
 # Create your models here.
 TYPE_CHOICES =  [('in','Income'),('ex','Expense')]
 class Income(models.Model):
@@ -13,6 +14,9 @@ class Income(models.Model):
 
     def __str__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
 
     class Meta:
         ordering = ['-date']

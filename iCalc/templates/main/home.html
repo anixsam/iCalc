@@ -21,8 +21,11 @@
                     <td>{{i.title}}</td>
                     <td>{{i.amount}}</td>
                     <td>{{i.date}}</td>
+                    <td class="icon"><a href="{% url 'edit' i.id %}"><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v3.png"/></a></td>
+                    <td class="icon"><a href="{% url 'delete' i.id %}"><img src="https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png"/></a></td>
                 </tr>
                 {% endfor %}
+                <tr><td>{{income_sum}}</td></tr>
             </table>
         </div>
     </div>
@@ -40,12 +43,17 @@
                     <td>{{i.title}}</td>
                     <td>{{i.amount}}</td>
                     <td>{{i.date}}</td>
+                    <td class="icon"><a href="{% url 'edit' i.id %}"><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v3.png"/></a></td>
+                    <td class="icon"><a href="{% url 'delete' i.id %}"><img src="https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png"/></a></td>
                 </tr>
                 {% endfor %}
+                <tr><td>{{expense_sum}}</td></tr>
             </table>
         </div>
     </div>
 </div>
+
+
 
 <a href="{% url 'addincome' %}">
 <div class="floating-button">

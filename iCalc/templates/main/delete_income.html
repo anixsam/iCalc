@@ -1,0 +1,45 @@
+{% extends 'style/style.html' %}
+
+{% block content %}
+<div class="navbar">
+    <h4>Hello {{request.user.first_name | title}} {{request.user.last_name | title}}</h4>
+    <div class="logout"><a href="{% url 'logout' %}">Logout</a></div>
+</div>
+{% if request.user.id == income.user.id %}
+<div class="container">
+    <div class="shadow">
+        <div class="header">
+            <h1></h1>
+        </div>
+        <div class="login-form">
+            <form method="post">
+                {% csrf_token %}
+                <p>Do you Want to Delete? the Transaction {{income}}</p>
+                <span class="btn"><input type="submit" value="Delete" class="button"></span>
+                <span class="btn"><a href="{% url 'home' %}"><input type="button" value="Cancel"
+                            class="button"></a></span>
+
+            </form>
+        </div>
+        {% else %}
+        <div style="justify-content:center; display: flex;">
+            <div>
+                <p class="alert">User : <strong>{{request.user.first_name}} {{request.user.last_name}}</strong> <br>
+                    <strong style="color : red;">Not Authorized</strong> to view/edit this content
+                </p><br>
+            </div>
+        </div>
+        <div style="justify-content:center; display: flex;">
+            <a href="{% url 'home' %}">
+                <input type="button" value="Cancel" class="button">
+            </a>
+        </div>
+        
+        {% endif %}
+    </div>
+
+
+
+
+
+    {% endblock %}
